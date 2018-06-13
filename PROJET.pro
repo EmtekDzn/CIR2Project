@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = PROJET
+TARGET = projetcir2
 INCLUDEPATH += .
 QT += widgets
 LIBS += -lmysqlcppconn

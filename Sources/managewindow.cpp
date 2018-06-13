@@ -121,7 +121,7 @@ void ManageWindow::fillPropPicker(string question) {
     ui->propPicker->addItem("Choisissez la proposition");
     ui->editPropLineEdit->clear();
 
-    int id_question = db->getIdQuestion(question);
+    int id_question = db->getId("id_question", "Question", "question", question);
 
     db->listPropositions(id_question);
     propositions = db->getPropositions();
@@ -189,6 +189,7 @@ void ManageWindow::on_themePicker_activated(const QString &arg1) {
         ui->themeLineEdit->setReadOnly(false);
         selectedTheme = arg1.toStdString();
         ui->themeLineEdit->setText(arg1);
+        ui->themeLineEdit->setFocus();
     } else{
         ui->themeLineEdit->setReadOnly(true);
         ui->themeLineEdit->clear();
@@ -201,16 +202,20 @@ void ManageWindow::on_themeLineEdit_editingFinished() {
 
 void ManageWindow::on_themeEditButton_clicked() {
     QMessageBox::StandardButton reply;
-    if(ui->themePicker->currentIndex()) {
+    if(ui->themePicker->currentIndex() && !db->checkIfExists("Theme", "categorie", newThemeName) && newThemeName != "") {
         reply = QMessageBox::question(this, "Confirmer", "Effectuer la modificiation ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
             db->editTheme(selectedTheme, newThemeName);
             fillPickers();
             fillThemePicker2();
         }
-    } else {
-        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner un theme.", QMessageBox::Cancel|QMessageBox::Ok);
-    }
+   } else if(db->checkIfExists("Theme", "categorie", newThemeName)) {
+        reply = QMessageBox::question(this, "Erreur", "Ce theme existe deja", QMessageBox::Cancel|QMessageBox::Ok);
+   } else if(newThemeName == "") {
+        reply = QMessageBox::question(this, "Erreur", "Veuillez remplir le champ", QMessageBox::Cancel|QMessageBox::Ok);
+   } else {
+          reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner un theme.", QMessageBox::Cancel|QMessageBox::Ok);
+   }
 }
 
 void ManageWindow::on_newThemeLineEdit_editingFinished() {
@@ -292,9 +297,8 @@ void ManageWindow::on_testAdminCheckbox_stateChanged(int arg1) {
 }
 
 void ManageWindow::on_addUserButton_clicked() {
-
     QMessageBox::StandardButton reply;
-    if(ui->newUsernameLineEdit->text() != "" && ui->newPwdLineEdit->text() != "" && !db->checkIfExists("User", "username", ui->newUsernameLineEdit->text().toStdString()) && ui->newPwdLineEdit->text().length() > 5) {
+    if(ui->newUsernameLineEdit->text() != "" && ui->newPwdLineEdit->text() != "" && !db->checkIfExists("User", "username", ui->newUsernameLineEdit->text().toStdString()) && ui->newPwdLineEdit->text().length() > 5 && ui->newPwdLineEdit->text().length() < 10) {
         reply = QMessageBox::question(this, "Confirmer", "Ajouter l'utilisateur ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
             db->addUser(newUsername, newPwd, checkAdmin);
@@ -344,7 +348,7 @@ void ManageWindow::on_addQuestionButton_clicked() {
     if(checkSyntax(ui->addQuestionLineEdit->text().toStdString()) && !db->checkIfExists("Question", "question", newQuestion)) {
         reply = QMessageBox::question(this, "Confirmer", "Ajouter la question ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
-            db->addQuestion(newQuestion, db->getIdTheme(selectedTheme));
+            db->addQuestion(newQuestion, db->getId("id_categorie", "Theme", "categorie", selectedTheme));
             fillPickers();
             ui->goodAnswerPicker->show();
             ui->addPropLineEdit->show();
@@ -366,7 +370,7 @@ void ManageWindow::on_addPropButton_clicked() {
     if(ui->addPropLineEdit->text() != "" && ui->goodAnswerPicker->currentIndex()) {
         reply = QMessageBox::question(this, "Confirmer", "Ajouter la proposition ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
-           db->addProp(proposition, ui->goodAnswerPicker->currentIndex(), db->getIdQuestion(newQuestion));
+           db->addProp(proposition, ui->goodAnswerPicker->currentIndex(), db->getId("id_question", "Question", "question", newQuestion));
            ui->addPropLineEdit->clear();
         }
     } else if (ui->addPropLineEdit->text() == ""){
@@ -430,7 +434,7 @@ void ManageWindow::on_editQuestionButton_clicked() {
     if(checkSyntax(newQuestion) && !db->checkIfExists("Question", "question", newQuestion)) {
         reply = QMessageBox::question(this, "Confirmer", "Modifier la question ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
-            db->editQuestion(newQuestion, db->getIdQuestion(selectedQuestion));
+            db->editQuestion(newQuestion, db->getId("id_question", "Question", "question", selectedQuestion));
             fillPickers();
             ui->editQuestionLineEdit->clear();
             on_questionPicker_activated("");
@@ -463,7 +467,7 @@ void ManageWindow::on_editPropButton_clicked() {
     if(ui->editPropLineEdit->text() != "" && ui->goodAnswerPicker_2->currentIndex()) {
         reply = QMessageBox::question(this, "Confirmer", "Modifier la proposition ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
-            db->editProp(proposition, ui->goodAnswerPicker_2->currentIndex(), db->getIdQuestion(selectedQuestion), db->getIdProposition(selectedProposition));
+            db->editProp(proposition, ui->goodAnswerPicker_2->currentIndex(), db->getId("id_question", "Question", "question", selectedQuestion), db->getId("id_proposition", "Proposition", "proposition", selectedProposition));
             fillPropPicker(selectedQuestion);
         }
     } else if (ui->editQuestionLineEdit->text() == "" || !ui->goodAnswerPicker_2->currentIndex()){
@@ -486,7 +490,7 @@ void ManageWindow::on_addPropButton2_clicked() {
     if(ui->addPropLineEdit2->text() != "" && !db->checkIfExists("Proposition", "proposition", proposition) && ui->goodAnswerPicker3->currentIndex()) {
         reply = QMessageBox::question(this, "Confirmer", "Ajouter la proposition ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
-            db->addProp(proposition, 2, db->getIdQuestion(selectedQuestion));
+            db->addProp(proposition, 2, db->getId("id_question", "Question", "question", selectedQuestion));
             fillPropPicker(selectedQuestion);
         }
     } else if(db->checkIfExists("Proposition", "proposition", proposition)) {
@@ -536,13 +540,13 @@ void ManageWindow::on_deleteQuestionButton_clicked() {
     if(ui->questionPicker->currentIndex()) {
         reply = QMessageBox::question(this, "Confirmer", "Supprimer cette question ?\nAttention, cela supprimera aussi les propositions associees.", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
-            db->delQuestion(selectedQuestion, db->getIdQuestion(selectedQuestion));
+            db->delQuestion(selectedQuestion, db->getId("id_question", "Question", "question", selectedQuestion));
             fillPickers();
             ui->editQuestionLineEdit->clear();
             on_questionPicker_activated("");
         }
     } else {
-        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner une question.", QMessageBox::Yes|QMessageBox::No);
+        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner une question.", QMessageBox::Cancel|QMessageBox::Ok);
     }
 }
 
@@ -551,12 +555,12 @@ void ManageWindow::on_deleteThemeButton_clicked() {
     if(ui->themePicker->currentIndex()) {
         reply = QMessageBox::question(this, "Confirmer", "Supprimer ce theme ?\nAttention, cela supprimera aussi les questions associees et leurs propositions.", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
-            db->delTheme(db->getIdTheme(selectedTheme));
+            db->delTheme(db->getId("id_categorie", "Theme", "categorie", selectedTheme));
             fillPickers();
             fillThemePicker2();
             ui->themeLineEdit->clear();
         }
     } else {
-        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner un theme.", QMessageBox::Yes|QMessageBox::No);
+        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner un theme.", QMessageBox::Cancel|QMessageBox::Ok);
     }
 }

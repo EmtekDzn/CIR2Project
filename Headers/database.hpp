@@ -48,6 +48,8 @@ class Database{
         void listQuestions_order_by_Categorie();
         void listUsers();
         void listPropositions(int id_question);
+        int getId(string id, string table, string row, string token);
+        string getPwd(string user);
 
         /// Fonctions d'ajout de donnees
         void addTheme(string newName);
@@ -73,10 +75,6 @@ class Database{
         string checkApostrophes(string statement);
 
         /// Getters
-        int getIdTheme(string theme);
-        int getIdQuestion(string question);
-        int getIdProposition(string proposition);
-        string getPwd(string user);
         vector <Theme> getThemes();
         vector <Question> getQuestions();
         vector <User> getUsers();

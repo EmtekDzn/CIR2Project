@@ -34,6 +34,7 @@ Database::Database(string ipAddress, string dbName, string dbPwd) {
 
 
 
+
 /*! __________________________________
  * Destructeur : Database::~Database()
  *____________________________________
@@ -43,7 +44,6 @@ Database::~Database() {
     delete stmt;
     delete con;
 }
-
 
 
 
@@ -150,34 +150,25 @@ string Database::getPwd(string user) {
  *      - std::string theme : Le nom du theme
  *
  * Retour :
- *      - std::string res->getString("password") : Le mot de passe retourné par la requete SQL
- *      - std::string "" : Un chaine vide si la requete n'a pas abouti
+ *      - std::string res->getInt("id_categorie") : L'id associé au theme
+ *      - int 0 : Si le resultat n'a pas abouti
  *
  */
-int Database::getIdTheme(string theme) {
-    theme = checkApostrophes(theme);
-    res = stmt->executeQuery("SELECT id_categorie FROM Theme WHERE categorie='"+theme+"'");
+int Database::getId(string id, string table, string row, string token) {
+     id = checkApostrophes(id);
+     table = checkApostrophes(table);
+     row = checkApostrophes(row);
+     token = checkApostrophes(token);
 
+    res = stmt->executeQuery("SELECT "+id+" FROM "+table+" WHERE "+row+"='"+token+"'");
     if(res->next()) {
-        res->getInt("id_categorie");
+        return res->getInt(id);
     }
-
     return 0;
 }
 
-int Database::getIdQuestion(string question) {
-    question = checkApostrophes(question);
-    res = stmt->executeQuery("SELECT id_question FROM Question WHERE question='"+question+"'");
-    res->next();
-    return res->getInt("id_question");
-}
 
-int Database::getIdProposition(string proposition) {
-    proposition = checkApostrophes(proposition);
-    res = stmt->executeQuery("SELECT id_proposition FROM Proposition WHERE proposition='"+proposition+"'");
-    res->next();
-    return res->getInt("id_proposition");
-}
+
 
 void Database::listThemes() {
     themes.clear();
@@ -258,6 +249,7 @@ void Database::addUser(string username, string password, int checkAdmin) {
 
 void Database::addQuestion(string newQuestion, int idTheme) {
     newQuestion = checkApostrophes(newQuestion);
+    qDebug()<<QString::fromStdString(newQuestion)<<" "<<idTheme;
     stmt->executeUpdate("INSERT INTO Question (question, id_categorie) VALUES ('"+newQuestion+"', '"+patch::to_string(idTheme)+"')");
 }
 
