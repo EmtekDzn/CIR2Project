@@ -142,15 +142,18 @@ string Database::getPwd(string user) {
 
 
 /*!
- * Fonction : int Database::getIdTheme(std::string)
+ * Fonction : int Database::getId(std::string, std::string, std::string, std::string)
  *
- * Cette fonction renvoie l'id du theme entré apres avoir verifié s'il y a des apostrophes
+ * Cette fonction renvoie l'id désiré
  *
  * Parametres :
- *      - std::string theme : Le nom du theme
+ *      - std::string id : L'id désiré
+ *      - std::string table : La table sur laquelle effectuer la requete
+ *      - std::string row : La condition a verifier
+ *      - std::string token : La condition
  *
  * Retour :
- *      - std::string res->getInt("id_categorie") : L'id associé au theme
+ *      - std::string res->getInt(id) : L'id désiré
  *      - int 0 : Si le resultat n'a pas abouti
  *
  */
@@ -170,8 +173,19 @@ int Database::getId(string id, string table, string row, string token) {
 
 
 
+
+/*!
+ * Fonction : void Database::listThemes()
+ *
+ *
+ * Cette fonction remplit le vecteur de Theme
+ *
+ *
+ */
 void Database::listThemes() {
-    themes.clear();
+    themes.clear(); ///< On vide le tableau (sert pour actualiser les données)
+
+    /// Requete SQL : Selectionne le nom du theme et son id dans la table Theme et trie les resultats par categorie
     res = stmt->executeQuery("SELECT categorie, id_categorie FROM Theme ORDER BY categorie");
     while(res->next()) {
         themes.push_back(Theme(res->getString("categorie"), res->getInt("id_categorie")));
@@ -249,7 +263,6 @@ void Database::addUser(string username, string password, int checkAdmin) {
 
 void Database::addQuestion(string newQuestion, int idTheme) {
     newQuestion = checkApostrophes(newQuestion);
-    qDebug()<<QString::fromStdString(newQuestion)<<" "<<idTheme;
     stmt->executeUpdate("INSERT INTO Question (question, id_categorie) VALUES ('"+newQuestion+"', '"+patch::to_string(idTheme)+"')");
 }
 

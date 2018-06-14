@@ -681,7 +681,7 @@ public:
 
     void retranslateUi(QMainWindow *ManageWindow)
     {
-        ManageWindow->setWindowTitle(QApplication::translate("ManageWindow", "MainWindow", 0));
+        ManageWindow->setWindowTitle(QApplication::translate("ManageWindow", "Administration BDD", 0));
         actionQuitter->setText(QApplication::translate("ManageWindow", "Quitter", 0));
         editLabel->setText(QApplication::translate("ManageWindow", "Editer un theme", 0));
         themeEditButton->setText(QApplication::translate("ManageWindow", "Modifier", 0));

@@ -260,7 +260,7 @@ void ManageWindow::on_userPicker_activated(const QString &arg1) {
 
 void ManageWindow::on_editUserPushButton_clicked() {
     QMessageBox::StandardButton reply;
-    if(ui->userPicker->currentIndex() && ui->usernameLineEdit->text().length() > 5) {
+    if(ui->userPicker->currentIndex() && ui->usernameLineEdit->text().length() < 10 && ui->usernameLineEdit->text() != "") {
         reply = QMessageBox::question(this, "Confirmer", "Effectuer la modificiation ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
             db->editUser(selectedUser, newUsername, newPwd, checkAdmin);
@@ -269,9 +269,11 @@ void ManageWindow::on_editUserPushButton_clicked() {
             ui->usernameLineEdit->clear();
             ui->pwdLineEdit->clear();
         }
-    } else if(ui->usernameLineEdit->text().length() <= 5) {
+   } else if(ui->usernameLineEdit->text().length() >= 10) {
+        reply = QMessageBox::question(this, "Erreur", "Le nom d'utilisateur est trop long.", QMessageBox::Cancel|QMessageBox::Ok);
+   } else if(ui->usernameLineEdit->text() == "") {
         reply = QMessageBox::question(this, "Erreur", "Le nom d'utilisateur est trop court.", QMessageBox::Cancel|QMessageBox::Ok);
-    } else {
+   } else {
         reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner un utilisateur.", QMessageBox::Cancel|QMessageBox::Ok);
     }
 }
@@ -298,7 +300,7 @@ void ManageWindow::on_testAdminCheckbox_stateChanged(int arg1) {
 
 void ManageWindow::on_addUserButton_clicked() {
     QMessageBox::StandardButton reply;
-    if(ui->newUsernameLineEdit->text() != "" && ui->newPwdLineEdit->text() != "" && !db->checkIfExists("User", "username", ui->newUsernameLineEdit->text().toStdString()) && ui->newPwdLineEdit->text().length() > 5 && ui->newPwdLineEdit->text().length() < 10) {
+    if(ui->newUsernameLineEdit->text() != "" && !db->checkIfExists("User", "username", ui->newUsernameLineEdit->text().toStdString()) && ui->newPwdLineEdit->text().length() > 5 && ui->newUsernameLineEdit->text().length() < 10) {
         reply = QMessageBox::question(this, "Confirmer", "Ajouter l'utilisateur ?", QMessageBox::Yes|QMessageBox::No);
         if (reply == QMessageBox::Yes) {
             db->addUser(newUsername, newPwd, checkAdmin);
@@ -308,12 +310,13 @@ void ManageWindow::on_addUserButton_clicked() {
         }
     } else if(db->checkIfExists("User", "username", ui->newUsernameLineEdit->text().toStdString())){
         reply = QMessageBox::question(this, "Erreur", "Cet utilisateur existe deja.", QMessageBox::Cancel|QMessageBox::Ok);
-    } else if(ui->newPwdLineEdit->text().length() <= 5){
-
+   } else if(ui->newUsernameLineEdit->text().length() >= 10){
+         reply = QMessageBox::question(this, "Erreur", "Votre nom d'utilisateur est trop long.", QMessageBox::Cancel|QMessageBox::Ok);
+   } else if (ui->newPwdLineEdit->text().length() <= 5){
         reply = QMessageBox::question(this, "Erreur", "Votre mot de passe est trop court.", QMessageBox::Cancel|QMessageBox::Ok);
-    } else {
+   } else {
         reply = QMessageBox::question(this, "Erreur", "Veuillez remplir les champs.", QMessageBox::Cancel|QMessageBox::Ok);
-    }
+   }
 }
 
 void ManageWindow::on_themePicker2_activated(const QString &arg1){
@@ -470,10 +473,8 @@ void ManageWindow::on_editPropButton_clicked() {
             db->editProp(proposition, ui->goodAnswerPicker_2->currentIndex(), db->getId("id_question", "Question", "question", selectedQuestion), db->getId("id_proposition", "Proposition", "proposition", selectedProposition));
             fillPropPicker(selectedQuestion);
         }
-    } else if (ui->editQuestionLineEdit->text() == "" || !ui->goodAnswerPicker_2->currentIndex()){
+    } else{
         reply = QMessageBox::question(this, "Erreur", "Veuillez remplir les champs.", QMessageBox::Cancel|QMessageBox::Ok);
-    } else {
-        reply = QMessageBox::question(this, "Erreur", "Erreur de syntaxe. Format: Reponse1,Reponse2,les deux", QMessageBox::Cancel|QMessageBox::Ok);
     }
 }
 
@@ -513,7 +514,7 @@ void ManageWindow::on_deleteUserButton_clicked() {
             fillUserPicker();
         }
     } else {
-        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner un utilisateur.", QMessageBox::Yes|QMessageBox::No);
+        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner un utilisateur.", QMessageBox::Cancel|QMessageBox::Ok);
     }
 }
 
@@ -531,7 +532,7 @@ void ManageWindow::on_deletePropButton_clicked() {
             fillPropPicker(selectedQuestion);
         }
     } else {
-        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner une proposition.", QMessageBox::Yes|QMessageBox::No);
+        reply = QMessageBox::question(this, "Erreur", "Veuillez selectionner une proposition.", QMessageBox::Cancel|QMessageBox::Ok);
     }
 }
 
