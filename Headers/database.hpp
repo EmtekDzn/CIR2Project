@@ -22,17 +22,6 @@
 #include "theme.hpp"
 #include "user.hpp"
 
-
-namespace patch
-{
-    template < typename T > std::string to_string( const T& n )
-    {
-        std::ostringstream stm ;
-        stm << n ;
-        return stm.str() ;
-    }
-}
-
 using namespace std;
 
 
@@ -46,8 +35,8 @@ class Database{
         /// Fonctions de récupération des données
         void listThemes();
         void listQuestions_order_by_Categorie();
-        void listUsers();
         void listPropositions(int id_question);
+        void listUsers();
         int getId(string id, string table, string row, string token);
         string getPwd(string user);
 
