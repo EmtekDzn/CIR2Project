@@ -10,7 +10,7 @@ Se rendre dans la base créée puis cliquer sur **Importer**
 Choisir le fichier *database.sql* (dans le dossier sql) puis cliquer sur **Executer**
 
 
-## COMPILATION
+## Compilation
 
 En console dans le dossier contenant *adminburgerquiz.pro* :
 	```
@@ -19,7 +19,7 @@ En console dans le dossier contenant *adminburgerquiz.pro* :
 	~$ make clean
 	```
 
-## CONNEXION
+## Connexion
 
 Lancer *AdministrationBDD.exe* (double clique ou en console ./AdministrationBDD.exe)
 
