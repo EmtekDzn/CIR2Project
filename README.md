@@ -10,7 +10,7 @@ Se rendre dans la base créée puis cliquer sur **Importer**
 Choisir le fichier *database.sql* (dans le dossier sql) puis cliquer sur **Executer**
 
 
-##COMPILATION
+## COMPILATION
 
 En console dans le dossier contenant *adminburgerquiz.pro* :
 	```
@@ -19,7 +19,7 @@ En console dans le dossier contenant *adminburgerquiz.pro* :
 	~$ make clean
 	```
 
-##CONNEXION
+## CONNEXION
 
 Lancer *AdministrationBDD.exe* (double clique ou en console ./AdministrationBDD.exe)
 
@@ -32,7 +32,7 @@ Remplir les champs correctement :
 
 	4. Nom d'utilisateur/Mot de Passe (premiere connexion : admin/admin)
 
-#OU
+# OU
 
 
 Remplir le fichier de configuration : *Ressources/conf.txt*
@@ -49,7 +49,7 @@ Puis remplir les champs restants :
 
 Cliquer sur **Se connecter**
 
-##Documentation
+## Documentation
 
 Se rendre dans le dossier **html**
 Ouvrir le fichier *index.html* dans votre navigateur
