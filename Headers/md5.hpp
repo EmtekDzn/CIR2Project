@@ -2,11 +2,14 @@
 #define MD5_HPP
 
 /*!
+ * \file md5.hpp
+ * \brief Fichier contenant la classe MD5
  *
- * --> Header de md5.cpp
- * --> ! Ce fichier a ete trouvé sur internet pour effectuer une fonction de hachage
- *     et n'est donc pas le fruit de mon propre travail !
- *
+ * /!\ Ce fichier a ete trouvé sur internet pour effectuer une fonction de hachage
+ * et n'est donc pas le fruit de mon propre travail
+ * 
+ * \author Frank Thilo
+ * \version 0.1
  */
 
 
@@ -44,8 +47,7 @@ documentation and/or software.
 
 #include "includes.hpp"
 
-// a small class for calculating MD5 hashes of strings or byte arrays
-// it is not meant to be fast or secure
+//
 //
 // usage: 1) feed it blocks of uchars with update()
 //      2) finalize()
@@ -54,6 +56,14 @@ documentation and/or software.
 //      MD5(std::string).hexdigest()
 //
 // assumes that char is 8 bit and int is 32 bit
+
+/*! \class MD5
+ * \brief a small class for calculating MD5 hashes of strings or byte arrays
+ * it is not meant to be fast or secure
+ *
+ * /!\ Ce fichier a ete trouvé sur internet pour effectuer une fonction de hachage
+ * et n'est donc pas le fruit de mon propre travail
+ */
 
 class MD5
 {
@@ -99,4 +109,3 @@ private:
 std::string md5(const std::string str);
 
 #endif // MD5_HPP
-

@@ -1,11 +1,13 @@
 /*!
+ * \file mainwindow.cpp
+ * \brief Fichier contenant les methodes de la classe MD5
  *
- * --> Ce fichier a ete trouvé sur internet pour effectuer une fonction de hachage
- *     et n'est donc pas le fruit de mon propre travail
- *
+ * /!\ Ce fichier a ete trouvé sur internet pour effectuer une fonction de hachage
+ * et n'est donc pas le fruit de mon propre travail
+ * 
+ * \author Frank Thilo
+ * \version 0.1
  */
-
-
 
 /* MD5
  converted to C++ class by Frank Thilo (thilo@unix-ag.org)

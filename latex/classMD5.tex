@@ -1,0 +1,52 @@
+\hypertarget{classMD5}{}\section{MD5 Class Reference}
+\label{classMD5}\index{M\+D5@{M\+D5}}
+
+
+a small class for calculating \mbox{\hyperlink{classMD5}{M\+D5}} hashes of strings or byte arrays it is not meant to be fast or secure  
+
+
+
+
+{\ttfamily \#include $<$md5.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMD5_aa836972700679dbcff6ae8337f6db464}\label{classMD5_aa836972700679dbcff6ae8337f6db464}} 
+typedef unsigned int {\bfseries size\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMD5_a155356ffd713345e69e6dcbd9f8da6ce}\label{classMD5_a155356ffd713345e69e6dcbd9f8da6ce}} 
+{\bfseries M\+D5} (const std\+::string \&text)
+\item 
+\mbox{\Hypertarget{classMD5_ac5ddf6cd8f940422396d321ea90ed045}\label{classMD5_ac5ddf6cd8f940422396d321ea90ed045}} 
+void {\bfseries update} (const unsigned char $\ast$buf, size\+\_\+type length)
+\item 
+\mbox{\Hypertarget{classMD5_ac5ccba375539b993958fb235f8ac849c}\label{classMD5_ac5ccba375539b993958fb235f8ac849c}} 
+void {\bfseries update} (const char $\ast$buf, size\+\_\+type length)
+\item 
+\mbox{\Hypertarget{classMD5_a10f607494a3f2e3e515fc4b99d1a06cc}\label{classMD5_a10f607494a3f2e3e515fc4b99d1a06cc}} 
+\mbox{\hyperlink{classMD5}{M\+D5}} \& {\bfseries finalize} ()
+\item 
+\mbox{\Hypertarget{classMD5_aaf466f683b4bd8b1b66544f48bf09608}\label{classMD5_aaf466f683b4bd8b1b66544f48bf09608}} 
+std\+::string {\bfseries hexdigest} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMD5_a0739666fd0f3a7117546f6c50e0783b2}\label{classMD5_a0739666fd0f3a7117546f6c50e0783b2}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&, \mbox{\hyperlink{classMD5}{M\+D5}} md5)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+a small class for calculating \mbox{\hyperlink{classMD5}{M\+D5}} hashes of strings or byte arrays it is not meant to be fast or secure 
+
+/!\textbackslash{} Ce fichier a ete trouvé sur internet pour effectuer une fonction de hachage et n\textquotesingle{}est donc pas le fruit de mon propre travail 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\mbox{\hyperlink{md5_8hpp}{md5.\+hpp}}\item 
+Sources/md5.\+cpp\end{DoxyCompactItemize}

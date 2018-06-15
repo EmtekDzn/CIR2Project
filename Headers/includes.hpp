@@ -2,16 +2,12 @@
 #define INCLUDES_HPP
 
 /*!
- * includes.hpp
- * ------------
- *
- *
- * --> Fichier contenant tous les include necessaires
- *
- *
- * Créé par Pierre-Alban Lagadec , 12 Juin 2018
+ * \file includes.hpp
+ * \brief Fichier contenant tous les include necessaires
+ * \author Pierre-Alban Lagadec
+ * \version 0.1
  */
-
+ 
 #include <stdlib.h>
 #include <iostream>
 #include <string>
@@ -31,4 +27,3 @@
 #include <QtWidgets>
 
 #endif // INCLUDES_HPP
-

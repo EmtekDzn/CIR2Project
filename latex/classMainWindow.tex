@@ -1,0 +1,155 @@
+\hypertarget{classMainWindow}{}\section{Main\+Window Class Reference}
+\label{classMainWindow}\index{Main\+Window@{Main\+Window}}
+
+
+Une classe Qt pour gerer la fenetre de connexion.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+hpp$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMainWindow}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_af61dc400b82ca1d28bab9fb4ee377528}{on\+\_\+ip\+Line\+Edit\+\_\+editing\+Finished}} ()
+\begin{DoxyCompactList}\small\item\em Slot recuperant les entrees utilisateur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a4ad002ada4f696aed5badc4728590eea}{on\+\_\+dbname\+Line\+Edit\+\_\+editing\+Finished}} ()
+\begin{DoxyCompactList}\small\item\em Slot recuperant les entrees utilisateur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_aefd7e7d3ddd36d873d0c972b9d89d0a3}{on\+\_\+dbpwd\+Line\+Edit\+\_\+editing\+Finished}} ()
+\begin{DoxyCompactList}\small\item\em Slot recuperant les entrees utilisateur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a33cdc4c422744bb769a725c28b7667d0}{on\+\_\+id\+Line\+Edit\+\_\+editing\+Finished}} ()
+\begin{DoxyCompactList}\small\item\em Slot recuperant les entrees utilisateur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a1a1846c640e2e6e208455a85f2c47a04}{on\+\_\+pwd\+Line\+Edit\+\_\+editing\+Finished}} ()
+\begin{DoxyCompactList}\small\item\em Slot recuperant les entrees utilisateur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a55cd52e7b00aff669290588f8affea5a}{on\+\_\+connect\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Slot effectuant la connexion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window}} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_ad098a8e0f66eebcdda2a7a1ee7fba382}{read\+Conf\+File}} ()
+\begin{DoxyCompactList}\small\item\em Fonction de lecture du fichier de configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Une classe Qt pour gerer la fenetre de connexion. 
+
+La classe met en place la bdd et permet de se connecter pour afficher la fenetre de gestion 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}\label{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}} 
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Main\+Window()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur. 
+
+Constructeur de la classe \mbox{\hyperlink{classMainWindow}{Main\+Window}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Widget} & $\ast$parent = 0 \+: Permet de faire passer un widget parent. Par défaut ce parametre vaut 0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{Main\+Window@{Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
+\index{````~Main\+Window@{$\sim$\+Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{$\sim$\+Main\+Window()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur. 
+
+Destructeur de la classe \mbox{\hyperlink{classMainWindow}{Main\+Window}} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainWindow_a55cd52e7b00aff669290588f8affea5a}\label{classMainWindow_a55cd52e7b00aff669290588f8affea5a}} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+connect\+Button\+\_\+clicked@{on\+\_\+connect\+Button\+\_\+clicked}}
+\index{on\+\_\+connect\+Button\+\_\+clicked@{on\+\_\+connect\+Button\+\_\+clicked}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+connect\+Button\+\_\+clicked}{on\_connectButton\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+connect\+Button\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot effectuant la connexion. 
+
+Slot du boutton de connexion. Il permet de gerer les erreurs sur les entrées, creer une classe \mbox{\hyperlink{classDatabase}{Database}} et la fenetre de gestion de la B\+DD. \mbox{\Hypertarget{classMainWindow_a4ad002ada4f696aed5badc4728590eea}\label{classMainWindow_a4ad002ada4f696aed5badc4728590eea}} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+dbname\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+dbname\+Line\+Edit\+\_\+editing\+Finished}}
+\index{on\+\_\+dbname\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+dbname\+Line\+Edit\+\_\+editing\+Finished}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+dbname\+Line\+Edit\+\_\+editing\+Finished}{on\_dbnameLineEdit\_editingFinished}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+dbname\+Line\+Edit\+\_\+editing\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot recuperant les entrees utilisateur. 
+
+Ce slot stocke dans db\+Name le nom de la bdd entré \mbox{\Hypertarget{classMainWindow_aefd7e7d3ddd36d873d0c972b9d89d0a3}\label{classMainWindow_aefd7e7d3ddd36d873d0c972b9d89d0a3}} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+dbpwd\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+dbpwd\+Line\+Edit\+\_\+editing\+Finished}}
+\index{on\+\_\+dbpwd\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+dbpwd\+Line\+Edit\+\_\+editing\+Finished}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+dbpwd\+Line\+Edit\+\_\+editing\+Finished}{on\_dbpwdLineEdit\_editingFinished}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+dbpwd\+Line\+Edit\+\_\+editing\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot recuperant les entrees utilisateur. 
+
+Ce slot stocke dans db\+Pwd le mot de passe de la bdd entré \mbox{\Hypertarget{classMainWindow_a33cdc4c422744bb769a725c28b7667d0}\label{classMainWindow_a33cdc4c422744bb769a725c28b7667d0}} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+id\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+id\+Line\+Edit\+\_\+editing\+Finished}}
+\index{on\+\_\+id\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+id\+Line\+Edit\+\_\+editing\+Finished}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+id\+Line\+Edit\+\_\+editing\+Finished}{on\_idLineEdit\_editingFinished}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+id\+Line\+Edit\+\_\+editing\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot recuperant les entrees utilisateur. 
+
+Ce slot stocke dans user le nom d\textquotesingle{}utilisateur entré \mbox{\Hypertarget{classMainWindow_af61dc400b82ca1d28bab9fb4ee377528}\label{classMainWindow_af61dc400b82ca1d28bab9fb4ee377528}} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+ip\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+ip\+Line\+Edit\+\_\+editing\+Finished}}
+\index{on\+\_\+ip\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+ip\+Line\+Edit\+\_\+editing\+Finished}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+ip\+Line\+Edit\+\_\+editing\+Finished}{on\_ipLineEdit\_editingFinished}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+ip\+Line\+Edit\+\_\+editing\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot recuperant les entrees utilisateur. 
+
+Ce slot stocke dans ip\+Address l\textquotesingle{}ip entrée \mbox{\Hypertarget{classMainWindow_a1a1846c640e2e6e208455a85f2c47a04}\label{classMainWindow_a1a1846c640e2e6e208455a85f2c47a04}} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+pwd\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+pwd\+Line\+Edit\+\_\+editing\+Finished}}
+\index{on\+\_\+pwd\+Line\+Edit\+\_\+editing\+Finished@{on\+\_\+pwd\+Line\+Edit\+\_\+editing\+Finished}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+pwd\+Line\+Edit\+\_\+editing\+Finished}{on\_pwdLineEdit\_editingFinished}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+pwd\+Line\+Edit\+\_\+editing\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot recuperant les entrees utilisateur. 
+
+Ce slot stocke dans pwd le mot de passe entré \mbox{\Hypertarget{classMainWindow_ad098a8e0f66eebcdda2a7a1ee7fba382}\label{classMainWindow_ad098a8e0f66eebcdda2a7a1ee7fba382}} 
+\index{Main\+Window@{Main\+Window}!read\+Conf\+File@{read\+Conf\+File}}
+\index{read\+Conf\+File@{read\+Conf\+File}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{read\+Conf\+File()}{readConfFile()}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+Conf\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction de lecture du fichier de configuration. 
+
+Cette fonction lit le fichier de configuration et en extrait les données pour remplir les champs d\textquotesingle{}entrée d\textquotesingle{}ip et du nom de la bdd 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\mbox{\hyperlink{mainwindow_8hpp}{mainwindow.\+hpp}}\item 
+Sources/\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

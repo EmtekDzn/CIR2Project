@@ -1,0 +1,537 @@
+\hypertarget{classDatabase}{}\section{Database Class Reference}
+\label{classDatabase}\index{Database@{Database}}
+
+
+Classe de la base de donnée.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDatabase_a95206f04bf344b042799c9bed2bc29ad}{Database}} (string ip\+Address, string db\+Name, string db\+Pwd)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatabase_a84d399a2ad58d69daab9b05330e1316d}{$\sim$\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classDatabase_aa3d736693ce3f873f29078c89c57df93}{check\+Apostrophes}} (string statement)
+\begin{DoxyCompactList}\small\item\em Verification de syntaxe. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatabase_aab00e57287fe5e19c727c6cd2cadc154}{test\+Admin}} (string user, string pwd)
+\begin{DoxyCompactList}\small\item\em Verification de syntaxe. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatabase_adbff1128a3de654905631045f56955f0}{check\+If\+Exists}} (string table, string row, string token)
+\begin{DoxyCompactList}\small\item\em Fonction de test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a725966780835e8a3c1315fbdce50258f}{list\+Themes}} ()
+\begin{DoxyCompactList}\small\item\em Fonction de récupération de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_ae5bacbdc2d6804c63d79cdafc249dd64}{list\+Questions\+\_\+order\+\_\+by\+\_\+\+Categorie}} ()
+\begin{DoxyCompactList}\small\item\em Fonction de récupération de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a184cd88b6dfcc3938b699107b693d642}{list\+Propositions}} (int id\+\_\+question)
+\begin{DoxyCompactList}\small\item\em Fonction de récupération de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_adf142a6306d28877edca6de39a4b7bc1}{list\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Fonction de récupération de données. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDatabase_a4b452a64336f21e9ff02495c6f52b0fc}{get\+Id}} (string id, string table, string row, string token)
+\begin{DoxyCompactList}\small\item\em Fonction de récupération de données. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classDatabase_aa521990114ae753ab5cea9b7ebf3ca01}{get\+Pwd}} (string user)
+\begin{DoxyCompactList}\small\item\em Fonction de récupération de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a15faf1f7341da9efee62afacd31fb81d}{add\+Theme}} (string new\+Name)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}ajout de donnees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_afcefe4bac17bcc073c8f14679c375a35}{add\+Question}} (string new\+Question, int id\+Theme)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}ajout de donnees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_adb9d2a51e963cf93bcfc0c47ce2e1d72}{add\+Prop}} (string proposition, int good\+Answer, int id\+Question)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}ajout de donnees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a5e69b420a56127d86aca142683e03cbf}{add\+User}} (string username, string password, int check\+Admin)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}ajout de donnees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a88ac52b22562c45d1e54610ee5ac4026}{edit\+Theme}} (string theme, string new\+Name)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}edition de donnees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_ac402414daf1786c1a9189fe29c18e345}{edit\+Question}} (string new\+Question, int id\+\_\+question)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}edition de donnees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a63fefba403dae2942256ee1704ee282a}{edit\+Prop}} (string proposition, int good\+Answer, int id\+\_\+question, int id\+\_\+proposition)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}edition de donnees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a2c742ca4a931b676f099951fe9dea256}{edit\+User}} (string user, string new\+Name, string new\+Pwd, int check\+Admin)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}edition de donnees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a1b99f71f520f57eb4dc53e7ad709660e}{del\+Theme}} (int id\+\_\+ctg)
+\begin{DoxyCompactList}\small\item\em Fonction de suppression de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a67a8d9eaa8a34e98606cf5233cbaa77f}{del\+Question}} (string question, int id\+\_\+question)
+\begin{DoxyCompactList}\small\item\em Fonction de suppression de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a58ea1f635ec948e38bdbcfec9dd98a5e}{del\+Prop}} (string proposition)
+\begin{DoxyCompactList}\small\item\em Fonction de suppression de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabase_a6c40c150a977a2c4c4a1c01fe48e7c71}{del\+User}} (string username)
+\begin{DoxyCompactList}\small\item\em Fonction de suppression de données. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classTheme}{Theme}} $>$ \mbox{\hyperlink{classDatabase_a4cc8ad17cfd1cbf1074e56aa1e2eb71d}{get\+Themes}} ()
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classQuestion}{Question}} $>$ \mbox{\hyperlink{classDatabase_ae1aff982221c7ed188e1ce3ed00f878d}{get\+Questions}} ()
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classProposition}{Proposition}} $>$ \mbox{\hyperlink{classDatabase_a19e779ae9923798268d4b7052b09a76f}{get\+Propositions}} ()
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classUser}{User}} $>$ \mbox{\hyperlink{classDatabase_a78d088be3546d65b81e532d931a90f22}{get\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe de la base de donnée. 
+
+La classe se connecte a la bdd et contient les fonctions effectuant les requetes S\+QL 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDatabase_a95206f04bf344b042799c9bed2bc29ad}\label{classDatabase_a95206f04bf344b042799c9bed2bc29ad}} 
+\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\subsubsection{\texorpdfstring{Database()}{Database()}}
+{\footnotesize\ttfamily Database\+::\+Database (\begin{DoxyParamCaption}\item[{string}]{ip\+Address,  }\item[{string}]{db\+Name,  }\item[{string}]{db\+Pwd }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+Constructeur de la classe \mbox{\hyperlink{classDatabase}{Database}}. Il recupere les drivers sql, se connecte a la B\+DD et initialise sql\+::\+Statement $\ast$stmt
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & ip\+Address \+: L\textquotesingle{}adresse ip de la B\+DD \\
+\hline
+{\em std\+::string} & db\+Name \+: Le nom de la B\+DD \\
+\hline
+{\em std\+::string} & db\+Pwd \+: Le mot de passe de la B\+DD \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a84d399a2ad58d69daab9b05330e1316d}\label{classDatabase_a84d399a2ad58d69daab9b05330e1316d}} 
+\index{Database@{Database}!````~Database@{$\sim$\+Database}}
+\index{````~Database@{$\sim$\+Database}!Database@{Database}}
+\subsubsection{\texorpdfstring{$\sim$\+Database()}{~Database()}}
+{\footnotesize\ttfamily Database\+::$\sim$\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur. 
+
+Destructeur de la classe \mbox{\hyperlink{classDatabase}{Database}} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDatabase_adb9d2a51e963cf93bcfc0c47ce2e1d72}\label{classDatabase_adb9d2a51e963cf93bcfc0c47ce2e1d72}} 
+\index{Database@{Database}!add\+Prop@{add\+Prop}}
+\index{add\+Prop@{add\+Prop}!Database@{Database}}
+\subsubsection{\texorpdfstring{add\+Prop()}{addProp()}}
+{\footnotesize\ttfamily void Database\+::add\+Prop (\begin{DoxyParamCaption}\item[{string}]{proposition,  }\item[{int}]{good\+Answer,  }\item[{int}]{id\+Question }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}ajout de donnees. 
+
+Cette fonction permet d\textquotesingle{}ajouter une proposition 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & proposition \+: Le nom de la nouvelle proposition \\
+\hline
+{\em int} & good\+Answer \+: La bonne reponse choisie (1,2 ou 3) \\
+\hline
+{\em int} & id\+Question \+: l\textquotesingle{}id de la question associée \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_afcefe4bac17bcc073c8f14679c375a35}\label{classDatabase_afcefe4bac17bcc073c8f14679c375a35}} 
+\index{Database@{Database}!add\+Question@{add\+Question}}
+\index{add\+Question@{add\+Question}!Database@{Database}}
+\subsubsection{\texorpdfstring{add\+Question()}{addQuestion()}}
+{\footnotesize\ttfamily void Database\+::add\+Question (\begin{DoxyParamCaption}\item[{string}]{new\+Question,  }\item[{int}]{id\+Theme }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}ajout de donnees. 
+
+Cette fonction permet d\textquotesingle{}ajouter une question 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & new\+Question \+: Le nom de la nouvelle question \\
+\hline
+{\em int} & id\+Theme \+: L\textquotesingle{}id du theme de la nouvelle question \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a15faf1f7341da9efee62afacd31fb81d}\label{classDatabase_a15faf1f7341da9efee62afacd31fb81d}} 
+\index{Database@{Database}!add\+Theme@{add\+Theme}}
+\index{add\+Theme@{add\+Theme}!Database@{Database}}
+\subsubsection{\texorpdfstring{add\+Theme()}{addTheme()}}
+{\footnotesize\ttfamily void Database\+::add\+Theme (\begin{DoxyParamCaption}\item[{string}]{new\+Name }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}ajout de donnees. 
+
+Cette fonction permet d\textquotesingle{}ajouter un theme 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & new\+Name \+: Le nom du nouveau theme \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a5e69b420a56127d86aca142683e03cbf}\label{classDatabase_a5e69b420a56127d86aca142683e03cbf}} 
+\index{Database@{Database}!add\+User@{add\+User}}
+\index{add\+User@{add\+User}!Database@{Database}}
+\subsubsection{\texorpdfstring{add\+User()}{addUser()}}
+{\footnotesize\ttfamily void Database\+::add\+User (\begin{DoxyParamCaption}\item[{string}]{username,  }\item[{string}]{password,  }\item[{int}]{check\+Admin }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}ajout de donnees. 
+
+Cette fonction permet d\textquotesingle{}ajouter un utilisateur 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & username \+: Le nom de l\textquotesingle{}utilisateur \\
+\hline
+{\em std\+::string} & password \+: Le nouveau nom a donner a cet utilisateur \\
+\hline
+{\em int} & check\+Admin \+: Etat de la Q\+Check\+Box (0,1 ou 2) pour mettre l\textquotesingle{}utilisateur en admin ou non \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_aa3d736693ce3f873f29078c89c57df93}\label{classDatabase_aa3d736693ce3f873f29078c89c57df93}} 
+\index{Database@{Database}!check\+Apostrophes@{check\+Apostrophes}}
+\index{check\+Apostrophes@{check\+Apostrophes}!Database@{Database}}
+\subsubsection{\texorpdfstring{check\+Apostrophes()}{checkApostrophes()}}
+{\footnotesize\ttfamily string Database\+::check\+Apostrophes (\begin{DoxyParamCaption}\item[{string}]{statement }\end{DoxyParamCaption})}
+
+
+
+Verification de syntaxe. 
+
+Cette fonction renvoie la chaine entrée après avoir doublé les apostrophes s\textquotesingle{}il y en a. Les apostrophes sont sources d\textquotesingle{}erreurs dans les requetes S\+QL, on les double pour eviter ces problemes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & statement \+: La chaine a verifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string statement \+: La chaine verifiée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatabase_adbff1128a3de654905631045f56955f0}\label{classDatabase_adbff1128a3de654905631045f56955f0}} 
+\index{Database@{Database}!check\+If\+Exists@{check\+If\+Exists}}
+\index{check\+If\+Exists@{check\+If\+Exists}!Database@{Database}}
+\subsubsection{\texorpdfstring{check\+If\+Exists()}{checkIfExists()}}
+{\footnotesize\ttfamily bool Database\+::check\+If\+Exists (\begin{DoxyParamCaption}\item[{string}]{table,  }\item[{string}]{row,  }\item[{string}]{token }\end{DoxyParamCaption})}
+
+
+
+Fonction de test. 
+
+Cette fonction permet de verifier si l\textquotesingle{}entrée existe deja en bdd ou non.
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & table \+: Le nom de la table \\
+\hline
+{\em std\+::string} & row \+: Le nom de la colonne a verifier \\
+\hline
+{\em std\+::string} & token \+: La condition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true \+: L\textquotesingle{}entrée existe en bdd 
+
+false \+: L\textquotesingle{}entrée n\textquotesingle{}existe pas en bdd 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatabase_a58ea1f635ec948e38bdbcfec9dd98a5e}\label{classDatabase_a58ea1f635ec948e38bdbcfec9dd98a5e}} 
+\index{Database@{Database}!del\+Prop@{del\+Prop}}
+\index{del\+Prop@{del\+Prop}!Database@{Database}}
+\subsubsection{\texorpdfstring{del\+Prop()}{delProp()}}
+{\footnotesize\ttfamily void Database\+::del\+Prop (\begin{DoxyParamCaption}\item[{string}]{proposition }\end{DoxyParamCaption})}
+
+
+
+Fonction de suppression de données. 
+
+Cette fonction permet de supprimer une proposition 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & proposition \+: Le nom de la proposition a supprimer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a67a8d9eaa8a34e98606cf5233cbaa77f}\label{classDatabase_a67a8d9eaa8a34e98606cf5233cbaa77f}} 
+\index{Database@{Database}!del\+Question@{del\+Question}}
+\index{del\+Question@{del\+Question}!Database@{Database}}
+\subsubsection{\texorpdfstring{del\+Question()}{delQuestion()}}
+{\footnotesize\ttfamily void Database\+::del\+Question (\begin{DoxyParamCaption}\item[{string}]{question,  }\item[{int}]{id\+\_\+question }\end{DoxyParamCaption})}
+
+
+
+Fonction de suppression de données. 
+
+Cette fonction permet de supprimer une question et les propositions associées 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & question \+: Le nom de la question a supprimer \\
+\hline
+{\em int} & id\+\_\+question \+: L\textquotesingle{}id de la question \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a1b99f71f520f57eb4dc53e7ad709660e}\label{classDatabase_a1b99f71f520f57eb4dc53e7ad709660e}} 
+\index{Database@{Database}!del\+Theme@{del\+Theme}}
+\index{del\+Theme@{del\+Theme}!Database@{Database}}
+\subsubsection{\texorpdfstring{del\+Theme()}{delTheme()}}
+{\footnotesize\ttfamily void Database\+::del\+Theme (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+ctg }\end{DoxyParamCaption})}
+
+
+
+Fonction de suppression de données. 
+
+Cette fonction permet de supprimer un theme et les questions et propositions associées 
+\begin{DoxyParams}{Parameters}
+{\em int} & id\+\_\+ctg \+: L\textquotesingle{}id du theme a supprimer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a6c40c150a977a2c4c4a1c01fe48e7c71}\label{classDatabase_a6c40c150a977a2c4c4a1c01fe48e7c71}} 
+\index{Database@{Database}!del\+User@{del\+User}}
+\index{del\+User@{del\+User}!Database@{Database}}
+\subsubsection{\texorpdfstring{del\+User()}{delUser()}}
+{\footnotesize\ttfamily void Database\+::del\+User (\begin{DoxyParamCaption}\item[{string}]{username }\end{DoxyParamCaption})}
+
+
+
+Fonction de suppression de données. 
+
+Cette fonction permet de supprimer un utilisateur 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & username \+: Le nom de l\textquotesingle{}utilisateur a supprimer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a63fefba403dae2942256ee1704ee282a}\label{classDatabase_a63fefba403dae2942256ee1704ee282a}} 
+\index{Database@{Database}!edit\+Prop@{edit\+Prop}}
+\index{edit\+Prop@{edit\+Prop}!Database@{Database}}
+\subsubsection{\texorpdfstring{edit\+Prop()}{editProp()}}
+{\footnotesize\ttfamily void Database\+::edit\+Prop (\begin{DoxyParamCaption}\item[{string}]{proposition,  }\item[{int}]{good\+Answer,  }\item[{int}]{id\+\_\+question,  }\item[{int}]{id\+\_\+proposition }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}edition de donnees. 
+
+Cette fonction permet d\textquotesingle{}éditer une proposition 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & proposition \+: Le nouveau nom de la proposition \\
+\hline
+{\em int} & good\+Answer \+: La bonne réponse \\
+\hline
+{\em int} & id\+\_\+question \+: L\textquotesingle{}id de la question associée \\
+\hline
+{\em id\+\_\+proposition} & \+: L\textquotesingle{}id de la proposition \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_ac402414daf1786c1a9189fe29c18e345}\label{classDatabase_ac402414daf1786c1a9189fe29c18e345}} 
+\index{Database@{Database}!edit\+Question@{edit\+Question}}
+\index{edit\+Question@{edit\+Question}!Database@{Database}}
+\subsubsection{\texorpdfstring{edit\+Question()}{editQuestion()}}
+{\footnotesize\ttfamily void Database\+::edit\+Question (\begin{DoxyParamCaption}\item[{string}]{new\+Question,  }\item[{int}]{id\+\_\+question }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}edition de donnees. 
+
+Cette fonction permet d\textquotesingle{}éditer une question 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & new\+Question \+: Le nouveau nom de la question \\
+\hline
+{\em int} & id\+\_\+question \+: L\textquotesingle{}id associé a la question \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a88ac52b22562c45d1e54610ee5ac4026}\label{classDatabase_a88ac52b22562c45d1e54610ee5ac4026}} 
+\index{Database@{Database}!edit\+Theme@{edit\+Theme}}
+\index{edit\+Theme@{edit\+Theme}!Database@{Database}}
+\subsubsection{\texorpdfstring{edit\+Theme()}{editTheme()}}
+{\footnotesize\ttfamily void Database\+::edit\+Theme (\begin{DoxyParamCaption}\item[{string}]{theme,  }\item[{string}]{new\+Name }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}edition de donnees. 
+
+Cette fonction permet de changer le nom d\textquotesingle{}un theme 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & theme \+: Le nom de l\textquotesingle{}ancien theme \\
+\hline
+{\em std\+::string} & new\+Name \+: Le nouveau nom a donner au theme \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a2c742ca4a931b676f099951fe9dea256}\label{classDatabase_a2c742ca4a931b676f099951fe9dea256}} 
+\index{Database@{Database}!edit\+User@{edit\+User}}
+\index{edit\+User@{edit\+User}!Database@{Database}}
+\subsubsection{\texorpdfstring{edit\+User()}{editUser()}}
+{\footnotesize\ttfamily void Database\+::edit\+User (\begin{DoxyParamCaption}\item[{string}]{user,  }\item[{string}]{new\+Name,  }\item[{string}]{new\+Pwd,  }\item[{int}]{check\+Admin }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}edition de donnees. 
+
+Cette fonction permet d\textquotesingle{}editer un profil 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & user \+: Le nom de l\textquotesingle{}utilisateur \\
+\hline
+{\em std\+::string} & new\+Name \+: Le nouveau nom a donner a cet utilisateur \\
+\hline
+{\em std\+::string} & new\+Pwd \+: Le nouveau mot de passe a donner a cet utilisateur \\
+\hline
+{\em int} & check\+Admin \+: Etat de la Q\+Check\+Box (0,1 ou 2) pour mettre l\textquotesingle{}utilisateur en admin ou non \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_a4b452a64336f21e9ff02495c6f52b0fc}\label{classDatabase_a4b452a64336f21e9ff02495c6f52b0fc}} 
+\index{Database@{Database}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Database@{Database}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily int Database\+::get\+Id (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{table,  }\item[{string}]{row,  }\item[{string}]{token }\end{DoxyParamCaption})}
+
+
+
+Fonction de récupération de données. 
+
+Cette fonction renvoie l\textquotesingle{}id désiré 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & id \+: L\textquotesingle{}id désiré \\
+\hline
+{\em std\+::string} & table \+: La table sur laquelle effectuer la requete \\
+\hline
+{\em std\+::string} & row \+: La condition a verifier \\
+\hline
+{\em std\+::string} & token \+: La condition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int res-\/$>$get\+Int(id) \+: L\textquotesingle{}id désiré 
+
+int 0 \+: Si le resultat n\textquotesingle{}a pas abouti 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatabase_a19e779ae9923798268d4b7052b09a76f}\label{classDatabase_a19e779ae9923798268d4b7052b09a76f}} 
+\index{Database@{Database}!get\+Propositions@{get\+Propositions}}
+\index{get\+Propositions@{get\+Propositions}!Database@{Database}}
+\subsubsection{\texorpdfstring{get\+Propositions()}{getPropositions()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classProposition}{Proposition}} $>$ Database\+::get\+Propositions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter. 
+
+Cette fonction permet de recuperer le vecteur de \mbox{\hyperlink{classProposition}{Proposition}} \begin{DoxyReturn}{Returns}
+vector$<$\+Theme$>$ propositions \+: Le vecteur de \mbox{\hyperlink{classProposition}{Proposition}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatabase_aa521990114ae753ab5cea9b7ebf3ca01}\label{classDatabase_aa521990114ae753ab5cea9b7ebf3ca01}} 
+\index{Database@{Database}!get\+Pwd@{get\+Pwd}}
+\index{get\+Pwd@{get\+Pwd}!Database@{Database}}
+\subsubsection{\texorpdfstring{get\+Pwd()}{getPwd()}}
+{\footnotesize\ttfamily string Database\+::get\+Pwd (\begin{DoxyParamCaption}\item[{string}]{user }\end{DoxyParamCaption})}
+
+
+
+Fonction de récupération de données. 
+
+Cette fonction renvoie le mot de passe de l\textquotesingle{}utilisateur entré 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & user \+: Le nom de l\textquotesingle{}utilisateur dont on veut le mot de passe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string res-\/$>$get\+String(\char`\"{}password\char`\"{}) \+: Le mot de passe 
+
+std\+::string \char`\"{}\char`\"{} \+: Un chaine vide si la requete n\textquotesingle{}a pas abouti 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatabase_ae1aff982221c7ed188e1ce3ed00f878d}\label{classDatabase_ae1aff982221c7ed188e1ce3ed00f878d}} 
+\index{Database@{Database}!get\+Questions@{get\+Questions}}
+\index{get\+Questions@{get\+Questions}!Database@{Database}}
+\subsubsection{\texorpdfstring{get\+Questions()}{getQuestions()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classQuestion}{Question}} $>$ Database\+::get\+Questions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter. 
+
+Cette fonction permet de recuperer le vecteur de \mbox{\hyperlink{classQuestion}{Question}} \begin{DoxyReturn}{Returns}
+vector$<$\+Theme$>$ questions \+: Le vecteur de \mbox{\hyperlink{classQuestion}{Question}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatabase_a4cc8ad17cfd1cbf1074e56aa1e2eb71d}\label{classDatabase_a4cc8ad17cfd1cbf1074e56aa1e2eb71d}} 
+\index{Database@{Database}!get\+Themes@{get\+Themes}}
+\index{get\+Themes@{get\+Themes}!Database@{Database}}
+\subsubsection{\texorpdfstring{get\+Themes()}{getThemes()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classTheme}{Theme}} $>$ Database\+::get\+Themes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter. 
+
+Cette fonction permet de recuperer le vecteur de \mbox{\hyperlink{classTheme}{Theme}} \begin{DoxyReturn}{Returns}
+vector$<$\+Theme$>$ themes \+: Le vecteur de \mbox{\hyperlink{classTheme}{Theme}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatabase_a78d088be3546d65b81e532d931a90f22}\label{classDatabase_a78d088be3546d65b81e532d931a90f22}} 
+\index{Database@{Database}!get\+Users@{get\+Users}}
+\index{get\+Users@{get\+Users}!Database@{Database}}
+\subsubsection{\texorpdfstring{get\+Users()}{getUsers()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classUser}{User}} $>$ Database\+::get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter. 
+
+Cette fonction permet de recuperer le vecteur de \mbox{\hyperlink{classUser}{User}} \begin{DoxyReturn}{Returns}
+vector$<$\+Theme$>$ users \+: Le vecteur de \mbox{\hyperlink{classUser}{User}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatabase_a184cd88b6dfcc3938b699107b693d642}\label{classDatabase_a184cd88b6dfcc3938b699107b693d642}} 
+\index{Database@{Database}!list\+Propositions@{list\+Propositions}}
+\index{list\+Propositions@{list\+Propositions}!Database@{Database}}
+\subsubsection{\texorpdfstring{list\+Propositions()}{listPropositions()}}
+{\footnotesize\ttfamily void Database\+::list\+Propositions (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+question }\end{DoxyParamCaption})}
+
+
+
+Fonction de récupération de données. 
+
+Cette fonction remplit le vecteur de \mbox{\hyperlink{classProposition}{Proposition}} 
+\begin{DoxyParams}{Parameters}
+{\em int} & id\+\_\+question \+: L\textquotesingle{}id de la question dont ont veut récuperer les propositions \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabase_ae5bacbdc2d6804c63d79cdafc249dd64}\label{classDatabase_ae5bacbdc2d6804c63d79cdafc249dd64}} 
+\index{Database@{Database}!list\+Questions\+\_\+order\+\_\+by\+\_\+\+Categorie@{list\+Questions\+\_\+order\+\_\+by\+\_\+\+Categorie}}
+\index{list\+Questions\+\_\+order\+\_\+by\+\_\+\+Categorie@{list\+Questions\+\_\+order\+\_\+by\+\_\+\+Categorie}!Database@{Database}}
+\subsubsection{\texorpdfstring{list\+Questions\+\_\+order\+\_\+by\+\_\+\+Categorie()}{listQuestions\_order\_by\_Categorie()}}
+{\footnotesize\ttfamily void Database\+::list\+Questions\+\_\+order\+\_\+by\+\_\+\+Categorie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction de récupération de données. 
+
+Cette fonction remplit le vecteur de \mbox{\hyperlink{classQuestion}{Question}}, trié par theme \mbox{\Hypertarget{classDatabase_a725966780835e8a3c1315fbdce50258f}\label{classDatabase_a725966780835e8a3c1315fbdce50258f}} 
+\index{Database@{Database}!list\+Themes@{list\+Themes}}
+\index{list\+Themes@{list\+Themes}!Database@{Database}}
+\subsubsection{\texorpdfstring{list\+Themes()}{listThemes()}}
+{\footnotesize\ttfamily void Database\+::list\+Themes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction de récupération de données. 
+
+Cette fonction remplit le vecteur de \mbox{\hyperlink{classTheme}{Theme}} \mbox{\Hypertarget{classDatabase_adf142a6306d28877edca6de39a4b7bc1}\label{classDatabase_adf142a6306d28877edca6de39a4b7bc1}} 
+\index{Database@{Database}!list\+Users@{list\+Users}}
+\index{list\+Users@{list\+Users}!Database@{Database}}
+\subsubsection{\texorpdfstring{list\+Users()}{listUsers()}}
+{\footnotesize\ttfamily void Database\+::list\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction de récupération de données. 
+
+Cette fonction remplit le vecteur de \mbox{\hyperlink{classUser}{User}} \mbox{\Hypertarget{classDatabase_aab00e57287fe5e19c727c6cd2cadc154}\label{classDatabase_aab00e57287fe5e19c727c6cd2cadc154}} 
+\index{Database@{Database}!test\+Admin@{test\+Admin}}
+\index{test\+Admin@{test\+Admin}!Database@{Database}}
+\subsubsection{\texorpdfstring{test\+Admin()}{testAdmin()}}
+{\footnotesize\ttfamily bool Database\+::test\+Admin (\begin{DoxyParamCaption}\item[{string}]{user,  }\item[{string}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Verification de syntaxe. 
+
+Cette fonction verifie si un utilisateur est un admin ou non.
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & user \+: Le nom d\textquotesingle{}utilisateur \\
+\hline
+{\em std\+::string} & pwd \+: Le mot de passe de l\textquotesingle{}utilisateur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true \+: L\textquotesingle{}utilisateur est un admin 
+
+false \+: L\textquotesingle{}utilisateur n\textquotesingle{}est pas un admin 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\mbox{\hyperlink{database_8hpp}{database.\+hpp}}\item 
+Sources/\mbox{\hyperlink{database_8cpp}{database.\+cpp}}\end{DoxyCompactItemize}
